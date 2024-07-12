@@ -20,7 +20,6 @@ module.exports = {
         footerGrey: '#141414',
       },
       fontSize: {
-        xl: '36px',
         category: [
           '10px',
           {

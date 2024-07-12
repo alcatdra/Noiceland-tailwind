@@ -661,10 +661,6 @@ video {
   width: 320px;
 }
 
-.w-\[387px\] {
-  width: 387px;
-}
-
 .w-\[80px\] {
   width: 80px;
 }
@@ -711,10 +707,6 @@ video {
 
 .gap-4 {
   gap: 1rem;
-}
-
-.gap-\[30px\] {
-  gap: 30px;
 }
 
 .gap-6 {
@@ -828,6 +820,10 @@ video {
   font-size: 16px;
 }
 
+.text-\[36px\] {
+  font-size: 36px;
+}
+
 .text-category {
   font-size: 10px;
   line-height: 12px;
@@ -845,14 +841,6 @@ video {
   font-size: 20px;
   line-height: 24px;
   font-weight: 400;
-}
-
-.text-xl {
-  font-size: 36px;
-}
-
-.text-\[36px\] {
-  font-size: 36px;
 }
 
 .font-extrabold {
