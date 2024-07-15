@@ -21,7 +21,7 @@ document.addEventListener('click', (e) => {
     !mobileDrawerElement.contains(e.target) &&
     !drawerButtonElement.contains(e.target)
   ) {
-    toggleMobileDrawer();
+    mobileDrawerElement.classList.add('translate-x-full');
   }
 });
 //close the drawer when clicking on a link inside of it
