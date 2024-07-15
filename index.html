@@ -2,6 +2,7 @@
 <html class="scroll-smooth">
   <head>
     <title>Noiceland</title>
+    <link rel="icon" href="src/assets/favicon.ico" type="image/x-icon" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,7 +13,7 @@
     />
     <link href="src/css/output.css" rel="stylesheet" />
   </head>
-  <body class="transition-all">
+  <body>
     <!-- Navbar -->
     <nav
       class="mx-auto max-w-[1200px] justify-between flex bg-green-5 px-5 py-9"
@@ -27,7 +28,7 @@
           />
         </svg>
       </a>
-      <ul class="flex gap-6">
+      <ul class="hidden sm:flex gap-6" id="menu-list">
         <li>
           <a
             href=""
@@ -50,14 +51,90 @@
           >
         </li>
       </ul>
+
+      <!--Mobile menu button-->
+      <button id="menu-button" class="sm:hidden text-grey focus:outline-none">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
     </nav>
 
     <hr class="color-hrGrey" />
 
+    <!-- Mobile menu drawer-->
+    <div
+      id="menu-panel"
+      class="sm:hidden container w-1/2 left-1/2 fixed inset-y-0 bg-white overflow-y-auto transition-transform translate-x-full ease-in-out duration-300"
+    >
+      <div class="grid gap-5">
+        <div class="mt-6 mr-5 justify-self-end">
+          <button id="menu-close-btn" class="text-gray-600 focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="grey"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <div>
+          <nav class="p-4 space-y-4">
+            <ul class="grid items-center gap-8">
+              <li>
+                <a href="#" class="font-libreFranklin text-xl uppercase"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#latest-posts"
+                  class="font-libreFranklin text-xl uppercase"
+                  >Latest</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#featured-posts"
+                  class="font-libreFranklin text-xl uppercase"
+                  >Featured posts</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="font-libreFranklin text-xl uppercase"
+                  >About</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
     <!-- Header -->
 
     <header class="mx-auto max-w-[1200px]">
-      <div class="mx-auto max-w-[1200px] grid lg:grid-cols-2 gap-20 my-20 px-5">
+      <div class="mx-auto grid lg:grid-cols-2 gap-20 my-20 px-5">
         <image src="src/assets/header-image.jpg" />
         <div class="container">
           <h6 class="font-libreFranklin text-category text-lightGrey uppercase">
@@ -83,7 +160,7 @@
     <!-- Content -->
     <div class="container mx-auto px-4 max-w-[1200px]">
       <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
-        <div class="py-5 max-w-contentPicture mx-auto">
+        <article class="py-5 max-w-contentPicture mx-auto">
           <image src="src/assets/content1.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -98,9 +175,9 @@
           >
             by Alessandra Ortiz
           </p>
-        </div>
+        </article>
 
-        <div class="py-5 max-w-contentPicture mx-auto">
+        <article class="py-5 max-w-contentPicture mx-auto">
           <image src="src/assets/content2.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -116,9 +193,9 @@
           >
             by Rosanna Ondricka
           </p>
-        </div>
+        </article>
 
-        <div class="py-5 max-w-contentPicture mx-auto">
+        <article class="py-5 max-w-contentPicture mx-auto">
           <image src="src/assets/content3.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -134,9 +211,9 @@
           >
             by Annie Lueilwitz
           </p>
-        </div>
+        </article>
 
-        <div class="py-5 max-w-contentPicture mx-auto">
+        <article class="py-5 max-w-contentPicture mx-auto">
           <image src="src/assets/content4.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -151,9 +228,9 @@
           >
             by Annie Lueilwitz
           </p>
-        </div>
+        </article>
 
-        <div class="py-5 max-w-contentPicture mx-auto">
+        <article class="py-5 max-w-contentPicture mx-auto">
           <image src="src/assets/content5.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -169,9 +246,9 @@
           >
             by Simeon Brekke
           </p>
-        </div>
+        </article>
 
-        <div class="py-5 max-w-contentPicture mx-auto">
+        <article class="py-5 max-w-contentPicture mx-auto">
           <image src="src/assets/content6.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -186,7 +263,7 @@
           >
             by Reta Torphy
           </p>
-        </div>
+        </article>
       </div>
 
       <hr class="mt-[65px] mb-[90px] color-hrGrey" />
@@ -198,7 +275,7 @@
         Latest posts
       </h6>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <div class="py-5 mx-auto max-w-latestPostsPicture">
+        <article class="py-5 mx-auto max-w-latestPostsPicture">
           <image src="src/assets/latest-posts/latest-1.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -213,8 +290,8 @@
           >
             by Reta Torphy
           </p>
-        </div>
-        <div class="py-5 mx-auto max-w-latestPostsPicture">
+        </article>
+        <article class="py-5 mx-auto max-w-latestPostsPicture">
           <image src="src/assets/latest-posts/latest-2.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -229,9 +306,9 @@
           >
             by Alessandra Ortiz
           </p>
-        </div>
+        </article>
 
-        <div class="py-5 mx-auto max-w-latestPostsPicture">
+        <article class="py-5 mx-auto max-w-latestPostsPicture">
           <image src="src/assets/latest-posts/latest-3.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -247,9 +324,9 @@
           >
             by Rosanna Ondricka
           </p>
-        </div>
+        </article>
 
-        <div class="py-5 mx-auto max-w-latestPostsPicture">
+        <article class="py-5 mx-auto max-w-latestPostsPicture">
           <image src="src/assets/latest-posts/latest-4.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -265,9 +342,9 @@
           >
             by Annie Lueilwitz
           </p>
-        </div>
+        </article>
 
-        <div class="py-5 mx-auto max-w-latestPostsPicture">
+        <article class="py-5 mx-auto max-w-latestPostsPicture">
           <image src="src/assets/latest-posts/latest-5.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -282,9 +359,9 @@
           >
             by Annie Lueilwitz
           </p>
-        </div>
+        </article>
 
-        <div class="py-5 mx-auto max-w-latestPostsPicture">
+        <article class="py-5 mx-auto max-w-latestPostsPicture">
           <image src="src/assets/latest-posts/latest-6.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -300,9 +377,9 @@
           >
             by Simeon Brekke
           </p>
-        </div>
+        </article>
 
-        <div class="py-5 mx-auto max-w-latestPostsPicture">
+        <article class="py-5 mx-auto max-w-latestPostsPicture">
           <image src="src/assets/latest-posts/latest-7.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -317,9 +394,9 @@
           >
             by Reta Torphy
           </p>
-        </div>
+        </article>
 
-        <div class="py-5 mx-auto max-w-latestPostsPicture">
+        <article class="py-5 mx-auto max-w-latestPostsPicture">
           <image src="src/assets/latest-posts/latest-8.png" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -335,7 +412,7 @@
           >
             by Leo Bartell
           </p>
-        </div>
+        </article>
       </div>
     </div>
 
@@ -343,7 +420,7 @@
     <div class="container mx-auto flex justify-center py-14">
       <button
         type="button"
-        class="hover:bg-grey transition-all border-2 border-black px-[100px] py-[27px] uppercase text-category font-libreFranklin"
+        class="hover:bg-grey transition-all border-2 border-black px-[100px] py-[27px] uppercase text-category font-libreFranklin active:scale-95"
       >
         view all latest posts
       </button>
@@ -353,12 +430,15 @@
 
     <!-- Featured Posts -->
 
-    <div class="container mx-auto px-4 max-w-[1200px] my-14">
+    <div
+      class="container mx-auto px-4 max-w-[1200px] my-14"
+      id="featured-posts"
+    >
       <h6 class="font-libreFranklin text-category text-lightGrey uppercase">
         Featured Posts
       </h6>
       <div class="grid grid-cols-2 gap-4">
-        <div class="py-5">
+        <article class="py-5">
           <image src="src/assets/featured1.jpg" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -373,9 +453,9 @@
           >
             by Clem Onojeghuo
           </p>
-        </div>
+        </article>
 
-        <div class="py-5">
+        <article class="py-5">
           <image src="src/assets/featured2.jpg" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -391,9 +471,9 @@
           >
             by Alessandra Ortiz
           </p>
-        </div>
+        </article>
 
-        <div class="py-5">
+        <article class="py-5">
           <image src="src/assets/featured3.jpg" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -408,9 +488,9 @@
           >
             by Coby Gottlieb
           </p>
-        </div>
+        </article>
 
-        <div class="py-5">
+        <article class="py-5">
           <image src="src/assets/featured4.jpg" />
           <h6
             class="font-libreFranklin text-category pt-[24px] pb-[18px] text-lightGrey uppercase"
@@ -426,7 +506,7 @@
           >
             by Annie Lueilwitz
           </p>
-        </div>
+        </article>
       </div>
     </div>
 
@@ -451,13 +531,6 @@
       <div
         class="containter mx-auto max-w-[1200px] font-libreFranklin text-category text-grey"
       >
-        <!-- <div class="grid grid-cols-4">
-          <h6 class="mb-4 uppercase col-span-3">Categories</h6>
-          <h6 class="mb-4 uppercase">Subscribe to newsletter</h6>
-
-        </div>
-         -->
-
         <div class="grid lg:grid-cols-4 sm:grid-cols-1">
           <div
             class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 text-footerCategory text-white font-libreFranklin mb-8 col-span-3"
@@ -481,14 +554,14 @@
           <div class="mb-8">
             <h6 class="mb-4 uppercase">Subscribe to newsletter</h6>
 
-            <form class="w-[320px] h-[48px]">
+            <form class="flex w-[320px] h-[48px]">
               <input
                 class="pl-5 uppercase w-[220px] h-[48px]"
                 type="email"
                 placeholder="email address"
               />
               <button class="text-white uppercase bg-black w-[80px] h-[48px]">
-                send
+                Send
               </button>
             </form>
           </div>
@@ -521,5 +594,6 @@
       </div>
       <div class="h-12"></div>
     </section>
+    <script type="text/javascript" src="src/js/script.js"></script>
   </body>
 </html>

@@ -43,7 +43,7 @@ module.exports = {
           },
         ],
       },
-      width: {
+      maxWidth: {
         contentPicture: '387px',
         latestPostsPicture: '285px',
       },
