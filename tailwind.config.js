@@ -20,12 +20,12 @@ module.exports = {
         footerGrey: '#141414',
       },
       fontSize: {
-        category: [
-          '10px',
+        header: [
+          '13px',
           {
-            lineHeight: '12px',
-            letterSpacing: '1px',
-            fontWeight: '400',
+            lineHeight: '22px',
+            letterSpacing: '0.5px',
+            fontWeight: '700',
           },
         ],
         title: [
@@ -49,5 +49,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: ['prettier-plugin-tailwindcss'],
 };
